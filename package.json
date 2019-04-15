@@ -4,6 +4,7 @@
   "description": "This repo aim to analyze react redux and DIY it.",
   "main": "lib/index.js",
   "scripts": {
+    "start": "parcel example/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -20,9 +21,14 @@
   },
   "homepage": "https://github.com/sialvsic/react-redux-analyze#readme",
   "dependencies": {
-    "@sialvsic/redux": "0.1.0"
+    "@babel/core": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@sialvsic/redux": "0.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.12.3",
     "react-redux": "^7.0.2"
   }
 }
