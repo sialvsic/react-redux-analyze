@@ -1,0 +1,23 @@
+{
+  "name": "react-redux-analyze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sialvsic/react-redux-analyze.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sialvsic/react-redux-analyze/issues"
+  },
+  "homepage": "https://github.com/sialvsic/react-redux-analyze#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "react-redux": "^7.0.2"
+  }
+}
