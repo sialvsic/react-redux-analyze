@@ -1,22 +1,27 @@
 {
-  "name": "react-redux-analyze",
+  "name": "@sialvsic/react-redux",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This repo aim to analyze react redux and DIY it.",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sialvsic/react-redux-analyze.git"
   },
-  "author": "",
+  "author": "sialvsic",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sialvsic/react-redux-analyze/issues"
   },
   "homepage": "https://github.com/sialvsic/react-redux-analyze#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@sialvsic/redux": "0.1.0"
+  },
   "devDependencies": {
     "react-redux": "^7.0.2"
   }
