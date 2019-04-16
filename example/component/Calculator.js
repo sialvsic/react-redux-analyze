@@ -1,6 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import connect from '../../src/connect';
 import {add, minus} from '../action';
+import {store} from '../index';
 
 class Calculator extends React.Component {
   constructor(){
@@ -10,7 +11,8 @@ class Calculator extends React.Component {
   }
 
   add(){
-    this.props.add(3);
+    store.dispatch(add(3));
+    // this.props.add(3);
   }
 
   minus(){

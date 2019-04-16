@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import Provider from '../src/provider';
 import Calculator from './component/Calculator';
 import redux from '@sialvsic/redux';
-// import * as redux from 'redux';
 
 const initialState = {
   calculate: {
@@ -34,7 +33,7 @@ const reducers = function(state = initialState, action) {
 
 };
 
-let store = redux.createStore(reducers);
+export const store = redux.createStore(reducers);
 
 class Root extends React.Component {
   constructor(props) {
