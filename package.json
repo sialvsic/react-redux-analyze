@@ -1,6 +1,6 @@
 {
   "name": "@sialvsic/react-redux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This repo aim to analyze react redux and DIY it.",
   "main": "lib/index.js",
   "scripts": {
