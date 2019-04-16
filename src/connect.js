@@ -9,21 +9,21 @@ function connect(mapStateToProps, mapDispatchToProps) {
       constructor(props, context) {
         super(props);
         // 默认情况下，先调用 mapStateToProps 赋予默认值
-        this.state = mapStateToProps(context.store.getState());
+        this.state = mapStateToProps(context.store.getState(), this.props);
       }
 
       componentDidMount() {
         // 每次更新都重新获取最新的状态
         this.context.store.subscribe(() => {
-          this.setState(mapStateToProps(this.context.store.getState()));
+          this.setState(mapStateToProps(this.context.store.getState(), this.props));
         });
       }
 
       render() {
         return (
           <Component
-            { ...mapStateToProps(this.context.store.getState()) }
-            { ...mapDispatchToProps(this.context.store.dispatch) }
+            { ...mapStateToProps(this.context.store.getState(), this.props) }
+            { ...mapDispatchToProps(this.context.store.dispatch, this.props) }
           />
         );
       }

@@ -32,9 +32,11 @@ class Calculator extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   // console.log('state')
   // console.log(state)
+  console.log(state);
+  console.log(ownProps);
   return {
     result: state.calculate.result,
   };

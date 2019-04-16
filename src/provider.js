@@ -5,9 +5,6 @@ export const MyContext = React.createContext({});
 class Provider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      store: props.store,
-    };
     this.getState = this.getState.bind(this);
   }
 
