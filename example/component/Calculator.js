@@ -1,6 +1,7 @@
 import React from 'react'
 import connect from '../../src/connect'
 import { add, minus } from '../action'
+import { store } from '../index'
 
 class Calculator extends React.Component {
   constructor() {
@@ -10,10 +11,12 @@ class Calculator extends React.Component {
   }
 
   add() {
+    store.dispatch(add(3))
     this.props.add(3)
   }
 
   minus() {
+    store.dispatch(minus(4))
     this.props.minus(4)
   }
 
@@ -30,17 +33,16 @@ class Calculator extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state')
-  console.log(state)
+  // console.log('state')
+  // console.log(state)
   return {
     result: state.calculate.result,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log('dispatch')
-  console.log(dispatch)
-
+  // console.log('dispatch')
+  // console.log(dispatch)
   return {
     add: (count) => {
       dispatch(add(count))
