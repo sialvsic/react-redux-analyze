@@ -1,14 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Provider from '../lib/provider'
-import Calculator from './component/Calculator'
-import redux from '@sialvsic/redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Provider from '../lib/provider';
+import Calculator from './component/Calculator';
+import redux from '@sialvsic/redux';
 
 const initialState = {
   calculate: {
     result: 0,
   },
-}
+};
 
 const reducers = function (state = initialState, action) {
   switch (action.type) {
@@ -18,7 +18,7 @@ const reducers = function (state = initialState, action) {
           ...state.calculate,
           result: state.calculate.result + action.value,
         },
-      })
+      });
 
     case 'MINUS':
       return Object.assign({}, state, {
@@ -26,18 +26,18 @@ const reducers = function (state = initialState, action) {
           ...state.calculate,
           result: state.calculate.result - action.value,
         },
-      })
+      });
     default:
-      return state
+      return state;
   }
 
-}
+};
 
-export const store = redux.createStore(reducers)
+export const store = redux.createStore(reducers);
 
 class Root extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -45,8 +45,8 @@ class Root extends React.Component {
       <Provider store={ store }>
         <Calculator/>
       </Provider>
-    )
+    );
   }
 }
 
-ReactDOM.render(<Root/>, document.getElementById('root'))
+ReactDOM.render(<Root/>, document.getElementById('root'));

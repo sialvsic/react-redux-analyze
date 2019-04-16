@@ -1,18 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-export const MyContext = React.createContext({})
+export const MyContext = React.createContext({});
 
 class Provider extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       store: props.store,
-    }
-    this.getState = this.getState.bind(this)
+    };
+    this.getState = this.getState.bind(this);
   }
 
   getState() {
-    return this.props.store
+    return this.props.store;
   }
 
   // static getDerivedStateFromProps(props, state){
@@ -31,9 +31,9 @@ class Provider extends React.Component {
       <MyContext.Provider value={ { store: this.props.store } }>
         { this.props.children }
       </MyContext.Provider>
-    )
+    );
   }
 
 }
 
-export default Provider
+export default Provider;
