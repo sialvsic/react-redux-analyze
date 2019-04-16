@@ -1,9 +1,8 @@
-const React = require('react');
+import React from 'react';
 
-class Provider extends React.component {
-
-  getChildContext() {
-    return {store: this.props.store};
+class Provider extends React.Component {
+  constructor(props){
+    super(props)
   }
 
   render() {
@@ -16,4 +15,4 @@ class Provider extends React.component {
 
 }
 
-module.exports = Provider;
+export default Provider;
