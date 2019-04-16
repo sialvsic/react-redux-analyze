@@ -38,7 +38,7 @@ npm publish --access public
 ```
 
 ```bash
-npm unpublish @sialvsic/redux-analyze@0.0.1 -f
+npm unpublish @sialvsic/react-redux@0.0.1 -f
 ```
 
 ## How to publish in local with verdaccio
