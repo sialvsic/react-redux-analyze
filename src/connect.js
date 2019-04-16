@@ -1,21 +1,24 @@
-import React from 'react';
-import {MyContext} from './provider';
+import React from 'react'
+import { MyContext } from './provider'
 
-function connect(mapStateToProps, mapDispatchToProps){
+function connect(mapStateToProps, mapDispatchToProps) {
 
-  return function(Component){
-    console.log(Component);
+  return function (Component) {
+    console.log(Component)
 
-    return function(){
+    return class Proxy extends React.Component {
+      static contextType = MyContext
 
-      return <MyContext.Consumer>
-        { value => {
-          console.log(value.getState());
-          return <Component/>;
-        } }
-      </MyContext.Consumer>;
-    };
-  };
+      render() {
+        return (
+          <Component
+            { ...mapStateToProps(this.context.store.getState()) }
+            { ...mapDispatchToProps(this.context.store.dispatch) }
+          />
+        )
+      }
+    }
+  }
 }
 
-export default connect;
+export default connect

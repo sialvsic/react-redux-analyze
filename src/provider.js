@@ -12,7 +12,7 @@ class Provider extends React.Component {
   }
 
   getState(){
-    return this.state.store.getState();
+    return this.props.store;
   }
 
   // static getDerivedStateFromProps(props, state){
@@ -28,7 +28,7 @@ class Provider extends React.Component {
 
   render(){
     return (
-      <MyContext.Provider value={ {getState: this.getState} }>
+      <MyContext.Provider value={ { store: this.props.store } }>
         { this.props.children }
       </MyContext.Provider>
     );

@@ -1,25 +1,23 @@
-import React from 'react';
-import connect from '../../src/connect';
-import {add, minus} from '../action';
-import {store} from '../index';
+import React from 'react'
+import connect from '../../src/connect'
+import { add, minus } from '../action'
 
 class Calculator extends React.Component {
-  constructor(){
-    super();
-    this.add = this.add.bind(this);
-    this.minus = this.minus.bind(this);
+  constructor() {
+    super()
+    this.add = this.add.bind(this)
+    this.minus = this.minus.bind(this)
   }
 
-  add(){
-    store.dispatch(add(3));
-    // this.props.add(3);
+  add() {
+    this.props.add(3)
   }
 
-  minus(){
-    this.props.minus(4);
+  minus() {
+    this.props.minus(4)
   }
 
-  render(){
+  render() {
 
     return <div>
       <p>this is a calculator</p>
@@ -27,23 +25,30 @@ class Calculator extends React.Component {
       <button onClick={ this.minus }>Minus</button>
       <p>Result:</p>
       <div>{ this.props.result }</div>
-    </div>;
+    </div>
   }
 }
 
 const mapStateToProps = (state) => {
+  console.log('state')
+  console.log(state)
   return {
     result: state.calculate.result,
-  };
-};
+  }
+}
 
-const mapDispatchToProps = (dispatch) => ({
-  add: (count) => {
-    dispatch(add(count));
-  },
-  minus: (count) => {
-    dispatch(minus(count));
-  },
-});
+const mapDispatchToProps = (dispatch) => {
+  console.log('dispatch')
+  console.log(dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Calculator);
+  return {
+    add: (count) => {
+      dispatch(add(count))
+    },
+    minus: (count) => {
+      dispatch(minus(count))
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calculator)
